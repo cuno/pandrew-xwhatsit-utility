@@ -1,4 +1,5 @@
 /* Copyright 2020 Purdea Andrei
+ * Copyright 2022 Matthew Wolf
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +22,11 @@
 #include <string>
 #include <vector>
 #include "device.h"
+
+#define QMK_USB_PID 0xfeed
+#define PANDREW_USB_ID 0x0481
+
+#define NUM_USB_PID 5
 
 class Communication
 {
