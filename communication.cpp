@@ -1,4 +1,5 @@
 /* Copyright 2020 Purdea Andrei
+ * Copyright 2022 Matthew Wolf
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +19,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include "../../util_comm.h"
+//#include "../../util_comm.h"
+#include "./util_comm.h"
 #include <wchar.h>
 
 Communication::Communication()

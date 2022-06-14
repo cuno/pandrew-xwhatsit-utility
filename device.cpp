@@ -18,7 +18,8 @@
 #include <stdexcept>
 #include <string.h>
 #include <stdio.h>
-#include "../../util_comm.h"
+//#include "../../util_comm.h"
+#include "./util_comm.h"
 
 const std::string XWHATSIT_ENDING_STRING = " (Running original xwhatsit firmware)";
 
