@@ -1,3 +1,20 @@
+Matthew J Wolf 14-Jun-2022 
+
+This is an unsupported and not offical version of the pandrew xwhatsit utility for the QMK firmware. 
+
+This fork of the utility has been updated to work with my refactored build of the xwhatsit QMK firmware.
+Link to the current branch that contains my refactored build:
+https://github.com/matthew-wolf-n4mtt/qmk_firmware/tree/mjw_xwhatsit
+
+The updates to the utility:
+- Updated with the refactored loaction of the firmare source code.
+- I added a search for old and refactored USB VID and PID.
+
+I have tested this version of the utility in Linux. 
+
+Below is the text of the original README file.  
+-------------------------------
+
 # Building
 
 ## Before building
