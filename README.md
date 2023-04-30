@@ -1,4 +1,6 @@
-Matthew J Wolf 14-Jun-2022 
+Matthew J Wolf 30-April-2023
+
+Newest update: Added support for the pi.codes USB VID and PID. 
 
 This is an unsupported and not offical version of the pandrew xwhatsit utility for the QMK firmware. 
 
@@ -11,6 +13,9 @@ The updates to the utility:
 - I added a search for old and refactored USB VID and PID.
 
 I have tested this version of the utility in Linux. 
+
+This version will only find one xwhatsit keyboard on the system. So only use it when there
+is one xwhatsit keyboard connected. 
 
 Below is the text of the original README file.  
 -------------------------------

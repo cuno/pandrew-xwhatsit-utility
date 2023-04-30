@@ -44,7 +44,8 @@ std::vector<std::string> Communication::scan()
     hid_device_info *usb_devs, *cur_usb_dev, *devinfo;
 
     int i = -1;
-    int kbd_pid[5] = {0X0F62, 0x1F62, 0x0F77, 0x0B53, 0x1B53};
+    int pid_codes_kbd_pid[2] = {0x4707, 0x6262};
+    int qmk_kbd_pid[5] = {0X0F62, 0x1F62, 0x0F77, 0x0B53, 0x1B53};
 
     //printf("Scanning\n");
     //hid_device_info *enu = hid_enumerate(0x0481, 0x0002);
@@ -55,10 +56,15 @@ std::vector<std::string> Communication::scan()
 
     cur_usb_dev = usb_devs;
     while (cur_usb_dev) {
-            if (cur_usb_dev->vendor_id == QMK_USB_PID) {
-
-                    for (i=0; i < NUM_USB_PID; i++) {
-                            if (cur_usb_dev->product_id == kbd_pid[i]) {
+	    if (cur_usb_dev->vendor_id == PID_CODES_USB_PID) {
+                    for (i=0; i < (int)(sizeof(pid_codes_kbd_pid) / sizeof(pid_codes_kbd_pid[0])); i++) {
+                            if (cur_usb_dev->product_id == pid_codes_kbd_pid[i]) {
+                                    devinfo = hid_enumerate(PID_CODES_USB_PID, cur_usb_dev->product_id);
+                            }
+                    }
+	    } else if (cur_usb_dev->vendor_id == QMK_USB_PID) {
+                    for (i=0; i < (int)(sizeof(qmk_kbd_pid) / sizeof(qmk_kbd_pid[0])); i++) {
+                            if (cur_usb_dev->product_id == qmk_kbd_pid[i]) {
                                     devinfo = hid_enumerate(QMK_USB_PID, cur_usb_dev->product_id);
                             }
                     }
