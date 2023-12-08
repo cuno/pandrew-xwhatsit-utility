@@ -44,8 +44,8 @@ std::vector<std::string> Communication::scan()
     hid_device_info *usb_devs, *cur_usb_dev, *devinfo;
 
     int i = -1;
-    int pid_codes_kbd_pid[2] = {0x4707, 0x6262};
-    int qmk_kbd_pid[5] = {0X0F62, 0x1F62, 0x0F77, 0x0B53, 0x1B53};
+    int pid_codes_kbd_pid[2] = {0x4704, 0x6262};
+    //int qmk_kbd_pid[5] = {0X0F62, 0x1F62, 0x0F77, 0x0B53, 0x1B53};
 
     //printf("Scanning\n");
     //hid_device_info *enu = hid_enumerate(0x0481, 0x0002);
@@ -62,12 +62,14 @@ std::vector<std::string> Communication::scan()
                                     devinfo = hid_enumerate(PID_CODES_USB_PID, cur_usb_dev->product_id);
                             }
                     }
+/*		    
 	    } else if (cur_usb_dev->vendor_id == QMK_USB_PID) {
                     for (i=0; i < (int)(sizeof(qmk_kbd_pid) / sizeof(qmk_kbd_pid[0])); i++) {
                             if (cur_usb_dev->product_id == qmk_kbd_pid[i]) {
                                     devinfo = hid_enumerate(QMK_USB_PID, cur_usb_dev->product_id);
                             }
                     }
+*/		    
             } else if (cur_usb_dev->vendor_id == PANDREW_USB_ID ) {
                     if (cur_usb_dev->product_id == 0x0002) {
                             devinfo = hid_enumerate(PANDREW_USB_ID, 0x0002);

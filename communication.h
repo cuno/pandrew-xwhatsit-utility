@@ -24,7 +24,7 @@
 #include "device.h"
 
 #define PID_CODES_USB_PID 0x1209
-#define QMK_USB_PID 0xfeed
+// #define QMK_USB_PID 0xfeed
 #define PANDREW_USB_ID 0x0481
 
 class Communication
